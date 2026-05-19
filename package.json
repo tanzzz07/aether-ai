@@ -1,0 +1,25 @@
+{
+  "name": "aether-ui",
+  "private": true,
+  "version": "0.1.0",
+  "packageManager": "npm@10.9.0",
+  "scripts": {
+    "dev": "npm run dev --workspace @aether/web",
+    "build": "npm run build --workspace @aether/web",
+    "lint": "npm run lint --workspace @aether/web",
+    "typecheck": "npm run typecheck --workspace @aether/web",
+    "format": "prettier --write .",
+    "backend:dev": "uvicorn backend.main:app --reload --host 0.0.0.0 --port 8000",
+    "backend:lint": "ruff check backend",
+    "backend:format": "ruff format backend"
+  },
+  "workspaces": [
+    "apps/web"
+  ],
+  "devDependencies": {
+    "prettier": "^3.3.3"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.105.4"
+  }
+}
